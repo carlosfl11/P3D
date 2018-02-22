@@ -21,6 +21,5 @@ int main(void)
 	} while (jogoDoGalo::countMoves < 9);
 
 	cin.get();
-
 	return 0;
 }
