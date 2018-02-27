@@ -1,24 +1,14 @@
 #pragma once
-#include <iostream>
+#define MAX(a, b) (a > b ? a : b)
+#define MIN(a, b) (a < b ? a : b)
 
 namespace my_game {
 
-	class Rectangulo
-	{
-		float centerX;
-		float centerY;
-
+	class Rectangle {
+	protected:
+		float xc, yc;
+		float width, height;
 	public:
-		Rectangulo();
-		~Rectangulo();
-
-
-		Rectangulo::Rectangulo()
-		{
-		}
-
-		Rectangulo::~Rectangulo()
-		{
-		}
+		Rectangle(float x = 0.0f, float y = 0.0f, float w = 0.0f, float h = 0.0f) : xc(x), yc(y), width(w), height(h) {};
 	};
-
+}
