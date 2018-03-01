@@ -10,7 +10,7 @@ class Circulo : public FiguraGeometrica {
 	int raio;
 public:
 	Circulo(int r) : raio(r) {};
-	~Circulo() { cout << "Destroi circulo!\n"; }
+	~Circulo() { cout << "Destroi circulo!\n\n"; }
 	float Perimetro();
 	float Area();
 	void Imprime();

@@ -4,16 +4,16 @@
 
 using namespace std;
 
-class Rectangulo : public FiguraGeometrica {
+class Rectangulo : public FiguraGeometrica{
 	int x, y;
 public:
-	Rectangulo(int x, int y) : x(x), y(y) {};
+	Rectangulo(int x = 0, int y = 0) : x(x), y(y) {};
 	~Rectangulo() { cout << "Destroi rectangulo!\n" << endl; }
-	Rectangulo operator+(const Rectangulo& r);
 	float Perimetro();
 	float Area();
 	void Imprime();
 
+	Rectangulo operator+(const Rectangulo& r);
 };
 
 
@@ -31,9 +31,9 @@ void Rectangulo::Imprime() {
 
 Rectangulo Rectangulo::operator+(const Rectangulo& r) {
 
-	Rectangulo rec(x,y);
-	rec.x = x + r.x;
-	rec.y = y + r.y;
+	Rectangulo rec(0,0);
+	rec.x = this->x + r.x;
+	rec.y = this->y + r.y;
 
 	return rec;
 }

@@ -2,21 +2,30 @@
 #include "Circulo.h"
 #include <iostream>
 #include <string>
+#include "Source.h"
 
 int main() {
-	FiguraGeometrica *rec1;
+	FiguraGeometrica *formaRec;
+	Rectangulo *rec, *rec1,*rec2;
 
-	Rectangulo forma = new Rectangulo(2, 3);
-	forma->Imprime();
+	// inicia uma vareavel forma como um circulo
+	formaRec = new Circulo(2);
+	formaRec->Imprime();
+	delete formaRec;
 
-	rec1 = new Rectangulo(2,5);
+	// inicia 3 rectangulos
+	rec = new Rectangulo(1, 2);
+	rec->Imprime();
+
+	rec1 = new Rectangulo(3, 5);
 	rec1->Imprime();
 
-	Rectangulo rec2 = new Rectangulo(0,0);
-
-	rec2 = rec1 + forma;
-	rec2->Imprime;
-
+	
+	//rec2 = rec + rec1;
+	//rec2->Imprime();
+	
+	rec2 = new Rectangulo();
+	rec2 = rec + rec1;
 	cin.get();
 
 	return 0;
