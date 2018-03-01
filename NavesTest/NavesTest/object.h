@@ -11,11 +11,12 @@ namespace spaceShips {
 		float shield{}, energy{}, plusDMG{};
 	public:
 		Object(float, float, float, float, Type);
-		Object(float, float, float, float, Type, int, float);
 		void move(float, float);
 		void addShield(float);
 		void addEnergy(float);
 		void addDamage(float);
+
+		void update();
 
 		static int countObjects;
 	};
@@ -28,11 +29,33 @@ namespace spaceShips {
 		countObjects++;
 	}
 
+	// adiciona escudo
+	void Object::addShield(float amount) {
+		shield += amount;
+	}
 
+	// adiciona energia
+	void Object::addEnergy(float amount) {
+		energy += amount;
+	}
 
+	//adiciona dano
+	void Object::addDamage(float amount) {
+		plusDMG += amount;
+	}
+
+	// move o objecto
 	void Object::move(float speedX, float speedY) {
 		xc += speedX;
 		yc += speedY;
 
 	}
+
+	void Object::update() {
+		if (shield > 0)
+			shield -= 1.0f;
+		if (energy > 0)
+			energy -= 1.0f;
+	}
+
 }
