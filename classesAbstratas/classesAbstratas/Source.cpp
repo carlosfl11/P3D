@@ -5,27 +5,30 @@
 #include "Source.h"
 
 int main() {
-	FiguraGeometrica *formaRec;
-	Rectangulo *rec, *rec1,*rec2;
+	FiguraGeometrica *formaCirc, *formaRec;
+	Rectangulo rec(5,2), rec1(6,8), rec2;
 
 	// inicia uma vareavel forma como um circulo
-	formaRec = new Circulo(2);
+	formaCirc = new Circulo(2);
+	formaCirc->Imprime();
+
+	formaRec = new Rectangulo(10, 8);
 	formaRec->Imprime();
-	delete formaRec;
+	
+
 
 	// inicia 3 rectangulos
-	rec = new Rectangulo(1, 2);
-	rec->Imprime();
+	rec.Imprime();
+	rec1.Imprime();
 
-	rec1 = new Rectangulo(3, 5);
-	rec1->Imprime();
-
-	
-	//rec2 = rec + rec1;
-	//rec2->Imprime();
-	
-	rec2 = new Rectangulo();
+	// soma dois rectangulos
+	cout << "\n--- Soma Rec + Rec1! ---\n";
 	rec2 = rec + rec1;
+	rec2.Imprime();
+	rec.Imprime();
+
+	delete formaCirc;
+	delete formaRec;
 	cin.get();
 
 	return 0;

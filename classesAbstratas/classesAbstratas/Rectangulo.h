@@ -8,12 +8,12 @@ class Rectangulo : public FiguraGeometrica{
 	int x, y;
 public:
 	Rectangulo(int x = 0, int y = 0) : x(x), y(y) {};
-	~Rectangulo() { cout << "Destroi rectangulo!\n" << endl; }
+	~Rectangulo() { cout << "Destroi rectangulo!" << endl; }
 	float Perimetro();
 	float Area();
 	void Imprime();
 
-	Rectangulo operator+(const Rectangulo& r);
+	Rectangulo operator+(const Rectangulo r);
 };
 
 
@@ -29,11 +29,11 @@ void Rectangulo::Imprime() {
 	cout << "Rectangulo:\n	X=" << x << " Y=" << y << "\n	Perimetro: " << Perimetro() << "\n	Area: " << Area() << "\n" << endl;
 }
 
-Rectangulo Rectangulo::operator+(const Rectangulo& r) {
+Rectangulo Rectangulo::operator+(const Rectangulo r) {
 
-	Rectangulo rec(0,0);
-	rec.x = this->x + r.x;
-	rec.y = this->y + r.y;
+	Rectangulo rec;
+	rec.x = x + r.x;
+	rec.y = y + r.y;
 
 	return rec;
 }
