@@ -4,30 +4,22 @@
 
 using namespace std;
 
-template <class Stack>
-class Stack
-{
-	int size
-	int *top;
-	auto [] s;
+template<class type>
+class Stack{
+	int size, topobject = 0;
+	type *stack;
 public:
-	//construtor
-	Stack(int x): size(x){
+	Stack(int x) {
 		if (x <= 0)
-			throw "Tamanho negativo!";
-		else
-			s
-			s = new auto[x];
-	}
-
-	//destrutor
-	~Stack() {
-		for (int i = 0; i < s ; i++)
-		{
-			
+			throw 1;	// caso seja negativvo lanca exxcepcao
+		else {
+			size = x;
+			stack = new type[size];
+			cout << "Stack criada com tamanho " << size << endl;
 		}
 	}
-
-
+	~Stack() { delete[] stack; cout << "Stack Eliminada!" << endl; }
+	int getSize() { return size; }
 };
+
 

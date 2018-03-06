@@ -27,6 +27,8 @@ int main() {
 
 	delete formaCirc;
 	delete formaRec;
+	delete &rec;
+
 	cin.get();
 
 	return 0;
