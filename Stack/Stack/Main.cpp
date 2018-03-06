@@ -5,7 +5,6 @@ using namespace std;
 
 int main() {
 	Stack<int> *stack = 0;
-
 	// try / catch para exxcecoes
 	try
 	{
@@ -20,6 +19,7 @@ int main() {
 	}
 	if (stack != NULL) {
 		cout << "tamanho: " << stack->getSize() << endl;
+
 	}
 	cin.get();
 	return 0;
