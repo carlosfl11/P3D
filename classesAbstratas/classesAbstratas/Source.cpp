@@ -15,9 +15,7 @@ int main() {
 	formaRec = new Rectangulo(10, 8);
 	formaRec->Imprime();
 	
-
-
-	// inicia 3 rectangulos
+	// imprime os rectangulos
 	rec.Imprime();
 	rec1.Imprime();
 
