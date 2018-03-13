@@ -16,6 +16,7 @@ int main() {
 	formaRec->Imprime();
 	
 	// imprime os rectangulos
+	
 	rec.Imprime();
 	rec1.Imprime();
 

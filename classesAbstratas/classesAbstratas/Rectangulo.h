@@ -6,6 +6,7 @@ using namespace std;
 
 class Rectangulo : public FiguraGeometrica{
 	int x, y;
+
 public:
 	Rectangulo(int x = 0, int y = 0) : x(x), y(y) {};
 	~Rectangulo() { cout << "Destroi rectangulo!" << endl; }
