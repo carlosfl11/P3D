@@ -32,7 +32,7 @@ void leitura() {
 	}
 };
 
-void lerLinha() {
+void lerPalavra() {
 	char linha[100];
 	ifstream ficheiro("meuficheiro.txt");
 	if (ficheiro.is_open()) {
@@ -94,7 +94,7 @@ int main() {
 
 
 	cout << "-- ler linha\n";
-	lerLinha();
+	lerPalavra();
 
 
 	cout << "-- ler char\n";
