@@ -10,7 +10,7 @@
 //c++
 #include <iostream>
 
-int main(void) {
+void testGlmMath() {
 	//resoluçao da janela da aplicaçao: 800x600
 	int width = 800, height = 600;
 	//vertices que formam o triangulo
@@ -47,7 +47,37 @@ int main(void) {
 		std::cout << "\tXclip=" << position.x << " Yclip=" << position.y << " Zclip=" << position.z <<
 			" Wclip =" << position.w << std::endl;
 	}
+}
 
+
+void exerc1() {
+	// ponto
+	glm::vec3 P(1.0f, 0.0f, 0.0f);
+
+	//Matriz modelaçao
+	glm::mat4 model = glm::mat4(1.0f);
+
+	model = glm::rotate(model, glm::radians(45.0f), glm::vec3(0, 0, 1));
+	model = glm::translate(model, glm::vec3(10.0f, 0.0f, 0.0f));
+
+	glm::vec3 pFinal = model * glm::vec4(P, 1.0f);
+
+	std::cout << "Coordenadas de P apos alteracao:" << std::endl;
+	std::cout << "P=(" << pFinal.x << "," << pFinal.y << "," << pFinal.z << ")" << std::endl;
+
+}
+
+
+int main(void) {
+	// exemplo
+	std::cout << "*********		testGlmMath		*************" << std::endl;
+	testGlmMath();
+	std::cout << "Press to continue!" << std::endl;
 	std::cin.get();
-	return 0;
+	system("cls");
+
+	//exercicio 1
+	std::cout << "*********	 exercicio 1	*************" << std::endl;
+	exerc1();
+	std::cin.get();
 }
