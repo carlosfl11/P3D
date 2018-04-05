@@ -67,17 +67,62 @@ void exerc1() {
 
 }
 
+void exerc2() {
+	//resoluçao da janela da aplicaçao: 800x600
+	int width = 600, height = 600;
+
+	//pontos
+	glm::vec3 vertex[] = {
+		glm::vec3(0.5f,-0.5f,0.0f),
+		glm::vec3(0.0f,0.5f,0.0f),
+		glm::vec3(-0.5f,-0.5f,0.0f) };
+
+	// matriz modelaçao
+	glm::mat4 model = glm::mat4(1.0f);
+	model = glm::translate(model, glm::vec3(0.0f, 0.0f, -90.0f));
+
+	// matriz projeccao
+	glm::mat4 projection = glm::ortho(-1.0f, 1.0f, -1.0f, 1.0f, 0.0f, 100.0f);
+
+	//matriz view
+	glm::mat4 view = glm::lookAt(
+		glm::vec3(0, 0, 0),
+		glm::vec3(0, 0, -1),
+		glm::vec3(0, 1, 0)
+	);
+
+	glm::mat4 MVP = projection * view * model;
+
+	for (int i = 0; i < 3; i++) {
+
+		glm::vec4 p = MVP * glm::vec4(vertex[i], 1.0f);
+		std::cout << "\tXclip =" << p.x << " Yclip=" << p.y << " Zclip=" << p.z << std::endl;
+
+		glm::vec3 pNorm(p.x / p.w, p.y / p.w, p.z / p.w);
+		glm::vec2 position((pNorm.x + 1)* (width / 2), (pNorm.y + 1)*(height / 2));
+
+		std::cout << "\tX=" << position.x << " Y=" << position.y << std::endl;
+	}
+
+}
+
 
 int main(void) {
-	// exemplo
-	std::cout << "*********		testGlmMath		*************" << std::endl;
-	testGlmMath();
-	std::cout << "Press to continue!" << std::endl;
-	std::cin.get();
-	system("cls");
+	//// exemplo
+	//std::cout << "*********		testGlmMath		*************" << std::endl;
+	//testGlmMath();
+	//std::cout << "Press to continue!" << std::endl;
+	//std::cin.get();
+	//system("cls");
 
-	//exercicio 1
-	std::cout << "*********	 exercicio 1	*************" << std::endl;
-	exerc1();
+	////exercicio 1
+	//std::cout << "*********	 exercicio 1	*************" << std::endl;
+	//exerc1();
+	//std::cin.get();
+	//system("cls");
+
+	//exercicio 2
+	std::cout << "*********	 exercicio 2	*************" << std::endl;
+	exerc2();
 	std::cin.get();
 }
