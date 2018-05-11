@@ -1,0 +1,9 @@
+﻿  LoadShaders.cpp
+  Source.cpp
+MSVCRT.lib(initializers.obj) : warning LNK4098: defaultlib 'libcmt.lib' conflicts with use of other libs; use /NODEFAULTLIB:library
+  Generating code
+  All 298 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+glew32s.lib(glew.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'glew32s.lib(glew.obj)' or at 'D:\Documentos\GitHub\P3D\exemploTexture02\x64\Release\vc120.pdb'; linking object as if no debug info
+  exemploTexture02.vcxproj -> D:\Documentos\GitHub\P3D\exemploTexture02\x64\Release\exemploTexture02.exe
+  exemploTexture02.vcxproj -> D:\Documentos\GitHub\P3D\exemploTexture02\x64\Release\exemploTexture02.pdb (Full PDB)
